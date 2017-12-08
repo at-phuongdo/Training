@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function longestWord(str) {
+      var arr = str.split(" ");
+      var longestWord = arr[0];
+      for (var i = 1; i < arr.length; i++) {
+        if(arr[i].length > longestWord.length) {
+          longestWord = arr[i];
+        }
+      }
+      return longestWord;
+    }
+    document.write(longestWord("Hello ban Phuong"));
+  </script>
+</body>
+</html>

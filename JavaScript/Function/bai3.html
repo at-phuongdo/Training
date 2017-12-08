@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function generate(str) {
+      var result = [];
+      for (var i = 0; i < str.length; i++) {
+      var temp = "";
+       for (var j = i; j < str.length; j++) {
+         temp += str.charAt(j);
+         result.push(temp);
+       }
+     }
+     return result;
+   }
+   document.write(generate("dog"));
+  </script>
+</body>
+</html>

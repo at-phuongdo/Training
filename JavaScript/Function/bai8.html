@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function checkPrime(number) {
+      var check = 1;
+      if(number<2){
+        check = 0;
+      }
+      else{
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+          if(number%i==0){
+            check = 0;
+            break;
+          }
+        }
+      }
+      if(check == 1) {
+        document.write(number+ ' is prime');
+      }
+      else{
+        document.write(number+ ' is not prime');
+      }
+    }
+    checkPrime(2);
+  </script>
+
+</body>
+</html>

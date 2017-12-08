@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    var str = "abcdef";
+    var result = '';
+    function reverseString(str) {
+      // Cach1
+      // for (var i = str.length - 1; i >= 0; i--) {
+      //   result += str[i];
+      // }
+      // return result;
+      
+      // ======================//
+      // Cach2
+      str = str+"";
+      return str.split("").reverse().join("");
+    }
+    document.write(reverseString(str));
+  </script>
+</body>
+</html>

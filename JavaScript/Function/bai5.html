@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function upperCase(str) {
+      var arr = str.split(" ");
+      var newArray = arr.map((el) => el.charAt(0).toUpperCase()+el.slice(1));
+      return newArray.join(" ");
+    }
+    document.write(upperCase("hello phuong"));
+  </script>
+</body>
+</html>

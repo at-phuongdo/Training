@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function countVowel(str) {
+      var vowel = ['u', 'e', 'o','a','i', 'U', 'E', 'O', 'A', 'I'];
+      var countNumber = 0;
+      for (var i = 0; i < str.length; i++) {
+        if(vowel.includes(str[i])){
+          countNumber ++;
+        }
+      }
+      return countNumber;
+    }
+    document.write(countVowel("The quick brown fox"));
+  </script>
+
+</body>
+</html>

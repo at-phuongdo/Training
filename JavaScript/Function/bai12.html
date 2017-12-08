@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Perfect Number</title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function checkPerfectNumber(n) {
+      var sum = 0;
+      for (var i = 1; i <= n/2; i++) {
+        if(n%i==0){
+          sum += i;
+        }
+      }
+      if (sum==n) {
+        document.write(n+' is perfect number'+'<br/>');
+      }
+      else {
+        document.write(n+ ' is not perfect number'+'<br/>');
+      }
+    }
+    checkPerfectNumber(5);
+    checkPerfectNumber(6);
+  </script>
+
+</body>
+</html>

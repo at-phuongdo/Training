@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palindrome string</title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+  //  function checkPalindromeString(str) {
+  //   return str.split("").reverse().join("") == str;
+  // }
+  // document.write(checkPalindromeString("madamw"));
+
+  function printPalindomeString(str) {
+    var newString = str.split("").reverse().join("");
+    if( newString == str) {
+      document.write('The palindomeString: '+ newString);
+    }
+    else {
+      document.write(str+ ' is not PalindromeString');
+    }
+  }
+  printPalindomeString('madam');
+  printPalindomeString('nurse');
+</script>
+</body>
+</html>

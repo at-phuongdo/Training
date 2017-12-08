@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8" async defer>
+    function factor(n) {
+      var result = [];
+      for (var i = 1; i <= n; i++) {
+        if(n%i==0){
+          result.push(i);
+        }
+      }
+      return result;
+    }
+    document.write(factor(15)+'<br/>');
+    document.write(factor(16)+'<br/>');
+    document.write(factor(17)+'<br/>');
+  </script>
+</body>
+</html>
