@@ -1,7 +1,7 @@
-$(document).ready(function(){
-    var setHeight = $(".main-top-left").height();
-    $('.tabcontent').css({'height': setHeight});
-});
+// $(document).ready(function(){
+//     var setHeight = $(".main-top-left").height();
+//     $('.tabcontent').css({'height': setHeight});
+// });
 
 var buttons = document.getElementsByClassName('tablinks');
 var contents = document.getElementsByClassName('tabcontent');
