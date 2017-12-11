@@ -32,6 +32,7 @@ body {
 .header {
   padding-top: 50px;
   padding-bottom: 20px;
+  color: #666666;
 }
 
 .header-top h1 {
@@ -39,7 +40,11 @@ body {
 }
 
 h2 {
-  color: #663399;
+  color: #666666;
+}
+
+h2, h3 {
+  margin-top: 10px;
 }
 
 .main-top-left {
@@ -61,7 +66,7 @@ h2 {
 .tablinks{
   background-color: darkgrey;
   color: black;
-  border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0 0;
   padding: 5px 5px 0;
 }
 
@@ -74,6 +79,19 @@ h2 {
   background-color: white;
   color: black;
 }
+
+a {
+  color: #FF9966;
+}
+
+.tab a:hover {
+  background-color: #ddd;
+}
+
+.tab a.active {
+  background-color: #ccc;
+}
+
 
 footer {
   text-align: center;
