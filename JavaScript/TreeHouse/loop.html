@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loop</title>
+</head>
+<body>
+  <script>
+    var upper = 10000;
+    var randNumber = getRandomNumber(upper);
+    var guess;
+    var count = 0;
+    function getRandomNumber(upper){
+     return Math.floor(Math.random() * upper) +1 ;
+    }
+
+    while(guess !== randNumber){
+      guess = getRandomNumber(upper);
+      count += 1;
+    }
+
+    document.write("randNumber: " + randNumber + "</br>");
+    document.write("count: " + count);
+
+ </script>
+</body>
+</html>
