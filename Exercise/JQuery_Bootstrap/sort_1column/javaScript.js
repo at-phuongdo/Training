@@ -23,7 +23,7 @@ function sortTable(index, dir){
   var rows = $('#mytable tbody  tr').get();
   rows.sort(function(a, b) {
     var content_A = $(a).children('td').eq(index).text();
-    var content_B = $(b).children('td').eq(index).text()
+    var content_B = $(b).children('td').eq(index).text();
 
     if(index===1){
       var A = content_A.toUpperCase();
