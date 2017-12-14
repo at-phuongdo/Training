@@ -38,7 +38,6 @@ function sortTable(col1, dir1, col2, dir2){
     }
   });
   $.each(rows, function(index, row) {
-    console.log(row);
     $('#mytable').children('tbody').append(row);
   });
 }
@@ -103,8 +102,15 @@ $('.button-down').click(function(){
 
 
 $('#btn-add').click(function(){
-  console.log($('#name').val());
-  var newRow = '<tr><td>' + $('#id').val() + '</td><td>' + $('#name').val() + '</td><td>' + $('#birthday').val() + '</td><td>' + $('#score').val() + '</td></tr>';
-   console.log(newRow);
-   $('#mytable').children('tbody').append(newRow);
+  if ($('#name').val().length !=0 && $('#birthday').val().length !=0 && $('#score').val().length !=0) {
+    var newId = increaseID();
+    var newRow = '<tr><td>' + newId + '</td><td>' + $('#name').val() + '</td><td>' + $('#birthday').val() + '</td><td>' + $('#score').val() + '</td></tr>';
+    $('#mytable').children('tbody').append(newRow);
+  }
 })
+
+function increaseID(){
+  var idCols = $('#mytable tbody tr td:nth-child(1)').get();
+  var idValues = idCols.map(x => +x.textContent);
+  return Math.max(...idValues)+1;
+}
