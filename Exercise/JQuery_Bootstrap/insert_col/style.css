@@ -1,0 +1,32 @@
+table, th {
+  text-align: center;
+}
+
+span {
+  width: 50%;
+}
+
+.content {
+  float: left;
+}
+
+.btn-add-col{
+  margin: 10px 0;
+}
+
+.button-up,
+.button-down {
+  float: right;
+}
+
+.button-up:hover, .button-down:hover {
+  color: green;
+}
+
+.red-color {
+  color: red;
+}
+
+.green-color {
+  color: green;
+}
