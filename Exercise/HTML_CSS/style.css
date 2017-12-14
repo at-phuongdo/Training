@@ -43,10 +43,10 @@ h2 {
   color: #666666;
 }
 
-h2, h3 {
+h2, 
+h3 {
   margin-top: 10px;
 }
-
 
 .main-right {
   width: 40%;
@@ -55,19 +55,19 @@ h2, h3 {
   color: white;
 }
 
-
-.header-main-right, .content-main-right {
+.header-main-right, 
+.content-main-right {
   margin: 20px;
 }
 
-.tablinks{
+.tab-links{
   background-color: darkgrey;
   color: black;
   border-radius: 3px 3px 0 0;
   padding: 5px 5px 0;
 }
 
-.tabcontent {
+.tab-content {
   float: left;
   padding: 20px 20px;
   font-size: 14px;
@@ -77,11 +77,11 @@ h2, h3 {
   color: black;
 }
 
-.tabcontent p{
+.tab-content p{
   margin-top: 10px;
 }
 
-.tabcontent h2{
+.tab-content h2{
   color: #002b80;
 }
 
@@ -96,7 +96,6 @@ a {
 .tab a.active {
   background-color: #ccc;
 }
-
 
 footer {
   text-align: center;
