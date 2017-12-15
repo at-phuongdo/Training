@@ -3,6 +3,7 @@
 var clickTime = -1;
 var col1, col2, dir1, dir2;
 var col_clicked;
+
 function compare(contentA, contentB, col, dir){
   if(col===1){
     var A = contentA.toUpperCase();
