@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Jquery Exercise</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <h1 class="text-center">Exercise Jquery, Bootstrap</h1>
+  <div class="main-content container">
+    <nav class="navbar">
+      <button class="btn btn-primary glyphicon glyphicon-plus btn-add-col" data-toggle="modal" data-target="#add-col-form">Add</button><div class="search">
+      <input type="text" class="form-control" id="search-content" placeholder="Search">
+    </div>
+  </nav>
+  <table class="table table-bordered" id="mytable">
+    <thead>
+      <tr>
+        <th>
+          <span class="content">ID</span>
+          <span class="glyphicon glyphicon-chevron-up button button-up"></span>
+          <span class="glyphicon glyphicon-chevron-down button button-down"></span>
+        </th>
+        <th>
+          <span class="content">Name</span>
+          <span class="glyphicon glyphicon-chevron-up button button-up"></span>
+          <span class="glyphicon glyphicon-chevron-down button button-down"></span>
+        </th>
+        <th>
+          <span class="content">Birthday</span>
+          <span class="glyphicon glyphicon-chevron-up button button-up"></span>
+          <span class="glyphicon glyphicon-chevron-down button button-down"></span>
+        </th>
+        <th>
+         <span class="content">Score</span>
+         <span class="glyphicon glyphicon-chevron-up button button-up"></span>
+         <span class="glyphicon glyphicon-chevron-down button button-down"></span>
+       </th>
+     </tr>
+   </thead>
+   <tbody>
+
+  </tbody>
+</table>
+
+<!-- MODAL -->
+<div class="modal fade" id="add-col-form" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center"><strong>Add Information New Row</strong></h3>
+      </div>
+      <div class="modal-body">
+        <form class="addForm">
+          <div class="alert alert-warning text-center" role="alert">
+            <strong> Please fill out all information.</strong>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="text">Score</label>
+            <input type="text" name="score" id="score" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="btn-add" data-dismiss="modal">Add</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="js/person.js"></script>
+<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="js/search.js" type="text/javascript" charset="utf-8" async defer></script>
+</body>
+</html>

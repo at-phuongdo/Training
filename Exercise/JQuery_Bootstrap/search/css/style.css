@@ -1,0 +1,45 @@
+/*Main content*/
+.main-content {
+  padding-top: 50px;
+}
+
+.search {
+  width: 30%;
+  float: right;
+}
+
+table, 
+th {
+  text-align: center;
+}
+
+span {
+  width: 50%;
+}
+
+.content {
+  float: left;
+}
+
+.search,
+.btn-add-col{
+  margin: 10px 0;
+}
+
+.button-up,
+.button-down {
+  float: right;
+}
+
+.button-up:hover, 
+.button-down:hover {
+  color: green;
+}
+
+.red-color {
+  color: red;
+}
+
+.green-color {
+  color: green;
+}
