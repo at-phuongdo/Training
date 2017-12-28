@@ -55,6 +55,15 @@ h3 {
   color: white;
 }
 
+.tab {
+  padding: 0;
+}
+
+.tab li {
+  list-style-type: none;
+  display: inline;
+}
+
 .header-main-right, 
 .content-main-right {
   margin: 20px;

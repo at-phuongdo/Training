@@ -1,0 +1,5 @@
+puts "first line \nsecond line"
+puts "\t tabline"
+puts "slash \\ line"
+puts "single \'quote\'"
+puts "double \"quote\""
