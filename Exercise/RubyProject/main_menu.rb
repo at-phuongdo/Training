@@ -23,17 +23,25 @@ module MainMenu
       when 'a'
         sort_menu
       when 's'
-        puts 'What do you want to search?'
-        search = gets.chomp
-        search_by_name(search)
+        search_menu
       when 'd'
-        puts 'Enter the code of task done:'
-        code_done = gets.chomp
-        done(code_done)
+        done_menu
       when 'e'
         exit!
       end
     end
+  end
+
+  def search_menu
+    puts 'What do you want to search?'
+    search = gets.chomp
+    search_by_name(search)
+  end
+
+  def done_menu
+    puts 'Enter the code of task done:'
+    code_done = gets.chomp
+    done(code_done)
   end
 
   def sort_menu
@@ -78,7 +86,7 @@ module MainMenu
       when 'd'
         list_task('done')
       when 'u'
-        list_task('unfinish')
+        list_task('to_do')
       when 'e'
         main_menu
       end
