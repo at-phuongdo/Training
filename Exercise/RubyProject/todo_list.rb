@@ -1,7 +1,7 @@
 require './task'
 require './main_menu'
 
-# todoList
+# class TodoList
 class TodoList
   include MainMenu
   attr_reader :tasks
