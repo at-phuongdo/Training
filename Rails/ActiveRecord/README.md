@@ -37,3 +37,37 @@ end
 
 ```
 
+#4. Has Many Through Associations
+
+
+#5.Render partial
+```
+  <% @post.comments.each do |comment| %>
+    <%= render partial: "comments/comment", locals: {comment: comment} %>
+  <% end %>
+```
+
+```
+ <%= render partial: "comments/comment", collection: @post.comments, as: :comment %>
+ ```
+
+ ```
+   <%= render partial: "comments/comment", collection: @post.comments %>
+ ```
+
+```
+  <%= render @post.comments %>
+```
+
+#6. Nested routes and Resources
+```
+  resources :posts do
+    resources :comments
+  end
+```
+
+
+
+
+
+

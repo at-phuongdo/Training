@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Event</title>
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div id="my-app">
+      <h1>{{ message }}</h1>
+      <p>
+        Visit: <a v-bind:href="url">{{ cleanURL }}</a>
+      </p>
+      <input type="text" class="form-control" v-model="url">
+      <button @click="humanizeURL" class="btn btn-primary">Humanize Me!</button>
+    </div>
+  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      var app = new Vue({
+        el: '#my-app',
+        data: {
+          message: 'Hello Vue World',
+          url: "",
+          cleanURL: ""
+        },
+        methods: {
+          humanizeURL: function() {
+            this.cleanURL = this.url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+          }
+        }
+      })
+    </script>
+
+</html>

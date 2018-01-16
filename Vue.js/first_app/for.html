@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="my-app">
+    <span v-for="n in (2,20)">{{ n }} </span>
+    <p v-for="(item, index) in items">
+     {{item.name}} - {{index}}      
+   </p>
+ </div>
+ <script type="text/javascript">
+  var vm = new Vue({
+    el: '#my-app',
+    data: {
+      items: [
+      { name: 'ABC'},
+      { name: 'DEF'}
+      ]
+    }
+  })
+</script>
+</body>
+</html>

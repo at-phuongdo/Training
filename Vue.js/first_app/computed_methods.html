@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+  <div id="computed">
+    <h1>ComputedB</h1>
+    <p v-for="name in startsWithB">{{name}}</p>
+    <h1>ComputedM</h1>
+    <p v-for="name in startsWithM">{{name}}</p>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#computed',
+      data:{
+        names: ["Bob", "Billy", "Mary", "Jane"]
+      },
+      computed:{
+        startsWithB(){
+          return this.startsWithChar("B")
+        },
+        startsWithM(){
+          return this.startsWithChar("M")
+        }
+      },
+      methods:{
+        startsWithChar(whichChar){
+          return this.names.filter(n => n.startsWith(whichChar))
+        }
+      }
+    })
+  </script>
+</body>
+</html>

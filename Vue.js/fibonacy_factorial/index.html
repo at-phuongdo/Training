@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Component system of Vue.js</title>
+  <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+  <div id="mathematic">
+    <h1>{{ title | uppercase }}</h1>
+    <h2>euclid1990</h2>
+    <label for="number">Number</label>
+    <input
+    type="text"
+    name="number"
+    maxlength="2"
+    value=""
+    placeholder="Input a number here."
+    v-model="number">
+
+    <!-- fibonacci component template -->
+    <script type="text/x-template" id="fibonacci-template">
+      <p class="fibonacci">Fibonacci({{ n }}) = {{ calculate }}</p>
+    </script>
+    <div v-component="fibonacci-component" v-show="number && !isNaN(number)" v-with="n: number"></div>
+
+    <!-- factorial component template -->
+    <script type="text/x-template" id="factorial-template">
+      <p class="factorial">Factorial({{ n }}) = {{ calculate }}</p>
+    </script>
+    <div v-component="factorial-component" v-show="number && !isNaN(number)" v-with="n: number"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

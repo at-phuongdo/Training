@@ -1,0 +1,28 @@
+body {
+    font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+h2 {
+    text-align: right;
+}
+
+label {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+input {
+    padding: 5px;
+}
+
+.fibonacci {
+    color: #5B369D;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.factorial {
+    color: #E50F0F;
+    margin: 10px;
+    font-weight: bold;
+}

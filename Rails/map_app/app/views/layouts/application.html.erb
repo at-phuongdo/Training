@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MapApp</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+  </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script> -->
+  <!-- <script src="//maps.google.com/maps/api/js?v=3.27&key=AIzaSyDEHpTjzc2CyFPY_m-_QCBWDI25w2pbnYM"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.30&key=AIzaSyD3-KK-ciKXSekQcUONph162WOC1DZF3B4">
+</script>
+</head>
+
+<body>
+  <%= yield %>
+  <script>
+    $(function() {
+     getLocation.initialize();
+   });
+
+    var getLocation = {
+     initialize: function() {
+       getLocation.fetch_data();
+     },
+
+     fetch_data: function() {
+       var url_path = window.location.pathname;
+       $.get(url_path, function(data) {
+         var addresses = data['addresses'];
+         const latitude = addresses[0].latitude;
+         const longitude = addresses[0].longitude;
+         getLocation.draw_map(latitude, longitude);
+       }, 'json');
+     },
+
+     draw_map: function(lat, lng) {
+       var companyLatlng = new google.maps.LatLng(lat, lng);
+       var mapOptions = {
+         zoom: 15,
+         center: companyLatlng,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+       }
+       var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+       var marker = new google.maps.Marker({
+         position: companyLatlng,
+         map: map
+       });
+     }
+   }
+ </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="http://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+  <p>Using mustaches: {{ rawHtml }}</p>
+  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+</div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        rawHtml: `<p style="color:red">This is red</p>`
+      }
+    })
+  </script>
+
+</body>
+</html>
