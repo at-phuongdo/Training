@@ -3,13 +3,13 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
 import App from './App'
+import People from './components/People'
 import List from './components/List'
 import router from './router'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 Vue.use(BootstrapVue);
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

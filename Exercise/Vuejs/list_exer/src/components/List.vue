@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h1 class="text-center">List member</h1>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -16,11 +17,26 @@
           <td class="text-center">{{ person.name }}</td>
           <td class="text-center">{{ person.birthday }}</td>
           <td class="text-center">{{ person.score }}</td>
-          <td class="text-center"><button type="button" class="btn btn-primary">Edit</button></td>
+          <td class="text-center">
+            <b-btn v-b-modal.my-modal>Edit</b-btn>
+          </td>
         </tr>
       </tbody>
     </table>
+
+    <!-- Modal Component -->
+    <b-modal id="my-modal" ref="modal" title="Edit profile" @ok="handleOk" @shown="clearName">
+      <form @submit.stop.prevent="handleSubmit">
+        <b-form-input type="text"></b-form-input>
+        <br>
+        <b-form-input type="text"></b-form-input>
+        <br>
+        <b-form-input type="text"></b-form-input>
+      </form>
+    </b-modal>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -28,7 +44,6 @@
     name: 'List',
     data() {
       return {
-
         people: [
         { 
           id: 1,
@@ -62,17 +77,26 @@
         },
         ]
       }
+    },
+    methods: {
+      clearName () {
+        this.name = ''
+      },
+      handleOk (evt) {
+        // Prevent modal from closing
+        evt.preventDefault()
+        if (!this.name) {
+          alert('Please enter your name')
+        } else {
+          this.handleSubmit()
+        }
+      },
+      handleSubmit () {
+        this.names.push(this.name)
+        this.clearName()
+        this.$refs.modal.hide()
+      }
     }
   }
 </script>
 
-<style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
-</style>
