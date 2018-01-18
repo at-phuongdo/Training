@@ -12,16 +12,6 @@ Vue.component('greeting', {
 
     }
   }
-})
-
-new Vue({
-  el: '#vue-app-one'
-  
-});
-
-new Vue({
-  el: '#vue-app-two'
-  
 });
 
 // local component
@@ -30,8 +20,14 @@ var Child = {
 }
 
 new Vue({
+  el: '#vue-app-one',
   components: {
     'my-component' : Child
   }
-})
+  
+});
 
+new Vue({
+  el: '#vue-app-two'
+  
+});
