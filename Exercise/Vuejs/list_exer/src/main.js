@@ -13,6 +13,7 @@ Vue.use(BootstrapVue);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
@@ -20,9 +21,3 @@ new Vue({
   template: '<App/>'
 });
 
-new Vue({
-  el: '#app',
-  router,
-  components: { List },
-  template: '<List/>'
-})
