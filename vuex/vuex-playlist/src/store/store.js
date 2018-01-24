@@ -31,6 +31,7 @@ export const store = new Vuex.Store({
       state.products.forEach( product => {
         product.price -= 1
       });
+      console.log("pp")
     }
   },
   actions: {

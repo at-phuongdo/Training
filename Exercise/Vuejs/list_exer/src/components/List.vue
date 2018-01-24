@@ -49,7 +49,6 @@
       showEdit: function(person, index) {
         this.index = index
         this.currentPerson = person
-        this.showModal = true
       },
       updateList: function(person) {
         this.people[this.index].name = person.name

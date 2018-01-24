@@ -24,9 +24,9 @@
     },
     methods: {
       reducePrice: function() {
-
-        // this.$store.commit('reducePrice');
-        this.$store.dispatch('reducePrice');
+        // Mutaion
+        this.$store.commit('reducePrice');
+        // this.$store.dispatch('reducePrice');
       }
     }
   }
