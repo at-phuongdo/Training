@@ -1,17 +1,18 @@
 <template>
   <div id="app">
+    <nav-bar></nav-bar>
     <list-app></list-app>
   </div>
 </template>
 
 <script>
   import List from './components/List.vue';
-  import Modal from './components/Modal.vue';
+  import Nav from './components/Nav.vue';
 
   export default {
     components: {
       'list-app': List,
-      'modal-app': Modal
+      'nav-bar' : Nav
     },
     name: 'App'
   }
@@ -24,6 +25,5 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
 </style>
