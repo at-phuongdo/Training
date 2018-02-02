@@ -5,23 +5,25 @@
     <paginate name="peoplePerPage" :list="people" :per="5">
       <b-table show-empty :items="paginated('peoplePerPage')" :fields="fields" >
         <template slot="actions" slot-scope="row">
-          <b-button size="sm" variant="primary" @click.stop="info(row.item)" class="mr-1">
-            Info modal
-          </b-button>
-          <b-button size="sm" variant="danger" @click="deletePerson(row.item)">
-            Delete
-          </b-button>
-        </template>
-      </b-table>
-    </paginate>
-    <div class="paginate">
-      <paginate-links for="peoplePerPage" :limit="2" :show-step-links="true" class="pagination" align="center"></paginate-links>
-    </div>
-    <br>
-
-    <new-person></new-person>
-    <detail-modal :information="modalInfo"></detail-modal>
-  </b-container>
+          <b-button size="sm" variant="warning" class="mr-1">
+          <router-link :to="{ name: 'user', params: { name: row.item.url }}">Detail</router-link>
+        </b-button>
+        <b-button size="sm" variant="primary" @click.stop="info(row.item)" class="mr-1">
+          Edit
+        </b-button>
+        <b-button size="sm" variant="danger" @click="deletePerson(row.item)">
+          Delete
+        </b-button>
+      </template>
+    </b-table>
+  </paginate>
+  <div class="paginate">
+    <paginate-links for="peoplePerPage" :limit="2" :show-step-links="true" class="pagination" align="center"></paginate-links>
+  </div>
+  <br>
+  <new-person></new-person>
+  <detail-modal :information="modalInfo"></detail-modal>
+</b-container>
 </template>
 <script>
   import InfoModal from './InfoModal.vue'

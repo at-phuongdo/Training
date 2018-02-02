@@ -1,0 +1,65 @@
+<div id="map"></div>
+<div id="infos">
+  <h2><span></span> visible beaches</h2>
+  <div class="info info-1">Bondi Beach</div>
+  <div class="info info-2">Coogee Beach</div>
+  <div class="info info-3">Cronulla Beach</div>
+<script>
+  var url_path = window.location.pathname;
+  $.get(url_path, function(data) {
+    var locations = data['addresses'];
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: new google.maps.LatLng(16.0787133,108.1227827),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+    var marker, i;
+    var markers = [];
+
+    for (i = 0; i < locations.length; i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][0].latitude, locations[i][0].longitude),
+        map: map
+      });
+
+      markers.push(marker);
+
+      google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
+        return function() {
+          infowindow.setContent(JSON.stringify(locations[i][0]));
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+      google.maps.event.addListener(marker, 'mouseout', (function(marker, i) {
+        return function() {
+          // infowindow.setContent(locations[i][0]);
+          infowindow.close();
+        }
+      })(marker, i));
+    }
+    google.maps.event.addListener(map, 'bounds_changed', function() {
+         // alert(map.getBounds());
+         var bounds = map.getBounds();
+         showVisibleMarkers(bounds, markers);
+       });
+  });
+
+  function showVisibleMarkers(bounds, markers) {
+    count = 0;
+    for (var i = 0; i < markers.length; i++) {
+      var marker = markers[i],
+      infoPanel = $('.info-' + (i+1) );
+      if(bounds.contains(marker.getPosition())===true) {
+        infoPanel.show();
+        count++;
+      }
+      else {
+        infoPanel.hide();
+      }
+    }
+    console.log(count)
+    $('#infos h2 span').html(count);
+  }
+</script>

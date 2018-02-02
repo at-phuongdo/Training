@@ -17,10 +17,19 @@ const mutations = {
 };
 
 const actions = {
-  fetchPeople({ commit })  {
+  fetchPeople({ commit }) {
     Vue.http.get('')
     .then((response) => {
       commit("FETCH_PEOPLE", response.body);
+    })
+    .catch((error => {
+      console.log(error.statusText)
+    }))
+  },
+  getUser({ commit }, id) {
+    Vue.http.get('' + id)
+    .then((response) => {
+      commit("FETCH_PEOPLE", response.body)
     })
     .catch((error => {
       console.log(error.statusText)
@@ -35,7 +44,7 @@ const actions = {
     .then(() => this.dispatch('fetchPeople'))
   },
   deletePerson(context, id) {
-    Vueue.http.delete('' + id)
+    Vue.http.delete('' + id)
     . then(() => this.dispatch('fetchPeople'))
   }
 }

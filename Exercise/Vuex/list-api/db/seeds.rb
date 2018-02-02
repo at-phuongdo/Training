@@ -5,6 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# 20.times do |i|
-#   Person.create(name: "Name #{i+12}", birthday: "25-01-1995", score: "#{i+12}")
-# end
+20.times do |i|
+  Person.create(name: "Name #{i}", birthday: "25-01-1995", score: "#{i}", url: "Name-#{i}")
+end

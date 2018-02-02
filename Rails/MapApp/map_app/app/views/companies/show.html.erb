@@ -1,0 +1,54 @@
+<div id="map" class="map"></div>
+<div id="results-container">
+  <h3>Results</h3>
+  <ul id="results-list">
+  </ul><!-- #results-list -->
+</div><!-- #results-container -->
+<script>
+    $(function() {
+     getLocation.initialize();
+   });
+
+    var getLocation = {
+     initialize: function() {
+       getLocation.fetch_data();
+     },
+
+     fetch_data: function() {
+       var url_path = window.location.pathname;
+       $.get(url_path, function(data) {
+         var addresses = data['addresses'];
+         const latitude = addresses[0].latitude;
+         const longitude = addresses[0].longitude;
+         getLocation.draw_map(latitude, longitude);
+       }, 'json');
+     },
+
+     draw_map: function(lat, lng) {
+       var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+       var companyLatlng = new google.maps.LatLng(lat, lng);
+       var infowindow =  new google.maps.InfoWindow({
+        content: 'Hello World!',
+        map: map
+      });
+
+       var mapOptions = {
+         zoom: 15,
+         center: companyLatlng,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+       }
+       var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+       var marker = new google.maps.Marker({
+         position: companyLatlng,
+         // icon: iconBase + 'parking_lot_maps.png',
+         map: map
+       });
+       google.maps.event.addListener(marker, 'mouseover', function() {
+        infowindow.open(map, this);
+      });
+       google.maps.event.addListener(marker, 'mouseout', function() {
+        infowindow.close();
+      });
+     }
+   }
+ </script>
