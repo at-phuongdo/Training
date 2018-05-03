@@ -75,7 +75,7 @@
   }
 </script>
 
-<style scope>
+<style scoped>
   .paginate {
     display: table;
     margin: auto;
